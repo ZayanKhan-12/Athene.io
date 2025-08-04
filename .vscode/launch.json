@@ -1,22 +1,14 @@
 {
-    "configurations": [
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:Athene.io}/AtheneNFT",
-            "name": "Debug AtheneNFT (AtheneNFT)",
-            "program": "${workspaceFolder:Athene.io}/AtheneNFT/.build/debug/AtheneNFT",
-            "preLaunchTask": "swift: Build Debug AtheneNFT (AtheneNFT)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:Athene.io}/AtheneNFT",
-            "name": "Release AtheneNFT (AtheneNFT)",
-            "program": "${workspaceFolder:Athene.io}/AtheneNFT/.build/release/AtheneNFT",
-            "preLaunchTask": "swift: Build Release AtheneNFT (AtheneNFT)"
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    }
+  ]
 }

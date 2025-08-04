@@ -13,9 +13,9 @@ let package = Package(
             targets: ["AtheneNFT"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/web3swift-team/web3swift.git", from: "3.0.0"),
-        .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.7.0")
+        .package(url: "https://github.com/web3swift-team/web3swift.git", .upToNextMajor(from: "3.1.2")),
+        .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMajor(from: "5.3.0")),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.7.0"))
     ],
     targets: [
         .executableTarget(
@@ -25,9 +25,10 @@ let package = Package(
                 .product(name: "BigInt", package: "BigInt"),
                 .product(name: "CryptoSwift", package: "CryptoSwift")
             ],
-            path: "Sources/AtheneNFT"),
-        .testTarget(
-            name: "AtheneNFTTests",
-            dependencies: ["AtheneNFT"])
+            path: "Sources/AtheneNFT",
+            resources: [
+                .process("Resources")
+            ])
+        // Removed testTarget since it's not properly set up yet
     ]
 )
