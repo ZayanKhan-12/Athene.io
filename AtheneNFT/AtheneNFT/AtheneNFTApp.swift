@@ -1,18 +1,14 @@
 import SwiftUI
 import Combine
 
-@main
+// Don't use @main here since it's in Main.swift
 struct AtheneNFTApp: App {
-    @StateObject private var authManager = AuthenticationManager.shared
-    @StateObject private var fontManager = FontManager.shared
-    @StateObject private var nftService = NFTService.shared
+    // Use a simple property wrapper without dependencies for compilation
+    @State private var isLoggedIn: Bool = false
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(authManager)
-                .environmentObject(fontManager)
-                .environmentObject(nftService)
+            ContentView(isLoggedIn: $isLoggedIn)
                 .preferredColorScheme(.dark)
         }
     }
@@ -20,14 +16,13 @@ struct AtheneNFTApp: App {
 
 // MARK: - Content View
 struct ContentView: View {
-    @EnvironmentObject var authManager: AuthenticationManager
-    @EnvironmentObject var fontManager: FontManager
+    @Binding var isLoggedIn: Bool
     
     var body: some View {
-        if let _ = authManager.currentUser {
+        if isLoggedIn {
             MainTabView()
         } else {
-            LoginView()
+            LoginView(isLoggedIn: $isLoggedIn)
         }
     }
 }
