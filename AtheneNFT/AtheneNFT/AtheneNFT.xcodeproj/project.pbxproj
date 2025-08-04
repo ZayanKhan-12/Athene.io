@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD1234567890ABCD00000001 /* AtheneNFTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000002 /* AtheneNFTApp.swift */; };
+		AD1234567890ABCD00000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000004 /* Assets.xcassets */; };
+		AD1234567890ABCD00000005 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000006 /* Preview Assets.xcassets */; };
+		AD1234567890ABCD00000007 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000008 /* Main.swift */; };
+		AD1234567890ABCD00000009 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000010 /* MainTabView.swift */; };
+		AD1234567890ABCD00000011 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000012 /* HomeView.swift */; };
+		AD1234567890ABCD00000013 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000014 /* DiscoverView.swift */; };
+		AD1234567890ABCD00000015 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000016 /* NotificationsView.swift */; };
+		AD1234567890ABCD00000017 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000018 /* ProfileView.swift */; };
+		AD1234567890ABCD00000019 /* NFTCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000020 /* NFTCardView.swift */; };
+		AD1234567890ABCD00000021 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000022 /* LoginView.swift */; };
+		AD1234567890ABCD00000023 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000024 /* User.swift */; };
+		AD1234567890ABCD00000025 /* NFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000026 /* NFT.swift */; };
+		AD1234567890ABCD00000027 /* NFTModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000028 /* NFTModels.swift */; };
+		AD1234567890ABCD00000029 /* SharedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000030 /* SharedModels.swift */; };
+		AD1234567890ABCD00000031 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000032 /* AuthenticationManager.swift */; };
+		AD1234567890ABCD00000033 /* MetaMaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000034 /* MetaMaskService.swift */; };
+		AD1234567890ABCD00000035 /* NFTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000036 /* NFTService.swift */; };
+		AD1234567890ABCD00000037 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000038 /* UserService.swift */; };
+		AD1234567890ABCD00000039 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000040 /* URLHandler.swift */; };
+		AD1234567890ABCD00000041 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000042 /* FontManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD1234567890ABCD00000043 /* AtheneNFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtheneNFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD1234567890ABCD00000002 /* AtheneNFTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtheneNFTApp.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD1234567890ABCD00000006 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD1234567890ABCD00000008 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000010 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000012 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000014 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000016 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000018 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000020 /* NFTCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTCardView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000022 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000024 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000026 /* NFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFT.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000028 /* NFTModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTModels.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000030 /* SharedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedModels.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000032 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000034 /* MetaMaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaMaskService.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000036 /* NFTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTService.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000038 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000040 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000042 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD1234567890ABCD00000045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD1234567890ABCD00000046 = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000047 /* AtheneNFT */,
+				AD1234567890ABCD00000048 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000048 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000043 /* AtheneNFT.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000047 /* AtheneNFT */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000002 /* AtheneNFTApp.swift */,
+				AD1234567890ABCD00000049 /* Core */,
+				AD1234567890ABCD00000004 /* Assets.xcassets */,
+				AD1234567890ABCD00000044 /* Info.plist */,
+				AD1234567890ABCD00000050 /* Preview Content */,
+			);
+			path = AtheneNFT;
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000050 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000006 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000049 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000008 /* Main.swift */,
+				AD1234567890ABCD00000010 /* MainTabView.swift */,
+				AD1234567890ABCD00000012 /* HomeView.swift */,
+				AD1234567890ABCD00000014 /* DiscoverView.swift */,
+				AD1234567890ABCD00000016 /* NotificationsView.swift */,
+				AD1234567890ABCD00000018 /* ProfileView.swift */,
+				AD1234567890ABCD00000020 /* NFTCardView.swift */,
+				AD1234567890ABCD00000022 /* LoginView.swift */,
+				AD1234567890ABCD00000051 /* Models */,
+				AD1234567890ABCD00000052 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000051 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000024 /* User.swift */,
+				AD1234567890ABCD00000026 /* NFT.swift */,
+				AD1234567890ABCD00000028 /* NFTModels.swift */,
+				AD1234567890ABCD00000030 /* SharedModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000052 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000032 /* AuthenticationManager.swift */,
+				AD1234567890ABCD00000034 /* MetaMaskService.swift */,
+				AD1234567890ABCD00000036 /* NFTService.swift */,
+				AD1234567890ABCD00000038 /* UserService.swift */,
+				AD1234567890ABCD00000040 /* URLHandler.swift */,
+				AD1234567890ABCD00000042 /* FontManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD1234567890ABCD00000053 /* AtheneNFT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD1234567890ABCD00000054 /* Build configuration list for PBXNativeTarget "AtheneNFT" */;
+			buildPhases = (
+				AD1234567890ABCD00000055 /* Sources */,
+				AD1234567890ABCD00000045 /* Frameworks */,
+				AD1234567890ABCD00000056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AtheneNFT;
+			packageProductDependencies = (
+			);
+			productName = AtheneNFT;
+			productReference = AD1234567890ABCD00000043 /* AtheneNFT.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD1234567890ABCD00000057 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AD1234567890ABCD00000053 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AD1234567890ABCD00000058 /* Build configuration list for PBXProject "AtheneNFT" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD1234567890ABCD00000046;
+			productRefGroup = AD1234567890ABCD00000048 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD1234567890ABCD00000053 /* AtheneNFT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD1234567890ABCD00000056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1234567890ABCD00000005 /* Preview Assets.xcassets in Resources */,
+				AD1234567890ABCD00000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD1234567890ABCD00000055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1234567890ABCD00000001 /* AtheneNFTApp.swift in Sources */,
+				AD1234567890ABCD00000007 /* Main.swift in Sources */,
+				AD1234567890ABCD00000009 /* MainTabView.swift in Sources */,
+				AD1234567890ABCD00000011 /* HomeView.swift in Sources */,
+				AD1234567890ABCD00000013 /* DiscoverView.swift in Sources */,
+				AD1234567890ABCD00000015 /* NotificationsView.swift in Sources */,
+				AD1234567890ABCD00000017 /* ProfileView.swift in Sources */,
+				AD1234567890ABCD00000019 /* NFTCardView.swift in Sources */,
+				AD1234567890ABCD00000021 /* LoginView.swift in Sources */,
+				AD1234567890ABCD00000023 /* User.swift in Sources */,
+				AD1234567890ABCD00000025 /* NFT.swift in Sources */,
+				AD1234567890ABCD00000027 /* NFTModels.swift in Sources */,
+				AD1234567890ABCD00000029 /* SharedModels.swift in Sources */,
+				AD1234567890ABCD00000031 /* AuthenticationManager.swift in Sources */,
+				AD1234567890ABCD00000033 /* MetaMaskService.swift in Sources */,
+				AD1234567890ABCD00000035 /* NFTService.swift in Sources */,
+				AD1234567890ABCD00000037 /* UserService.swift in Sources */,
+				AD1234567890ABCD00000039 /* URLHandler.swift in Sources */,
+				AD1234567890ABCD00000041 /* FontManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AD1234567890ABCD00000059 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD1234567890ABCD00000060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD1234567890ABCD00000061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AtheneNFT/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AtheneNFT/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.athene.AtheneNFT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD1234567890ABCD00000062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AtheneNFT/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AtheneNFT/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.athene.AtheneNFT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD1234567890ABCD00000058 /* Build configuration list for PBXProject "AtheneNFT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1234567890ABCD00000059 /* Debug */,
+				AD1234567890ABCD00000060 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1234567890ABCD00000054 /* Build configuration list for PBXNativeTarget "AtheneNFT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1234567890ABCD00000061 /* Debug */,
+				AD1234567890ABCD00000062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD1234567890ABCD00000057 /* Project object */;
+}

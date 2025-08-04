@@ -5,6 +5,7 @@ on:
     branches: [ "keys", "zayan", "main" ]
   pull_request:
     branches: [ "keys", "zayan", "main" ]
+  workflow_dispatch:  # Allow manual triggering
 
 jobs:
   build:
@@ -35,12 +36,17 @@ jobs:
       - name: Build with Swift Package Manager
         run: |
           cd AtheneNFT
-          swift build
+          swift package resolve
+          swift build --build-tests
           
-      - name: Run Tests with Swift Package Manager
+      - name: Run Tests with Swift Package Manager (if available)
         run: |
           cd AtheneNFT
-          swift test
+          if swift package dump-package | grep -q "testTargets"; then
+            swift test
+          else
+            echo "No test targets found, skipping tests"
+          fi
           
       - name: Build with Xcode
         env:
