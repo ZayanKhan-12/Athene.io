@@ -23,9 +23,12 @@ struct AtheneNFTApp: App {
             .onAppear {
                 // Check for existing authentication
                 Task {
-                    if let savedUser = try? await UserService.shared.getCurrentUser() {
-                        authViewModel.currentUser = savedUser
-                        authViewModel.isAuthenticated = true
+                    if let storedAccount = MetaMaskService.shared.getStoredAccount() {
+                        do {
+                            try await authViewModel.loginWithStoredAccount(storedAccount)
+                        } catch {
+                            print("Failed to login with stored account: \(error.localizedDescription)")
+                        }
                     }
                 }
             }

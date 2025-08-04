@@ -12,8 +12,40 @@ class MetaMaskAuthViewModel: ObservableObject {
     
     private let web3Service = Web3Service.shared
     private let userService = UserService.shared
+    private let metamaskService = MetaMaskService.shared
     
-    func connectWallet() async {
+    func loginWithStoredAccount(_ account: MetaMaskService.MetaMaskAccount) async throws {
+        isLoading = true
+        error = nil
+        
+        do {
+            // Verify the stored account is still valid
+            guard let web3 = web3Service.getWeb3() else {
+                throw Web3Error.notInitialized
+            }
+            
+            let accounts = try await web3.eth.getAccounts()
+            guard accounts.contains(account.address.lowercased()) else {
+                metamaskService.clearStoredAccount()
+                throw AuthError.invalidStoredAccount
+            }
+            
+            // Load user profile
+            if let user = try? await userService.getUserProfile(address: account.address) {
+                currentUser = user
+                isAuthenticated = true
+            } else {
+                showCreateProfile = true
+            }
+        } catch {
+            self.error = error.localizedDescription
+            throw error
+        } finally {
+            isLoading = false
+        }
+    }
+    
+    func connectWallet() async throws {
         isLoading = true
         error = nil
         
