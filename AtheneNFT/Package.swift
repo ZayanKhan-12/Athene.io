@@ -5,6 +5,7 @@ let package = Package(
     name: "AtheneNFT",
     platforms: [
         .iOS(.v14),
+        .macOS(.v10_15)
     ],
     products: [
         .executable(
@@ -12,16 +13,21 @@ let package = Package(
             targets: ["AtheneNFT"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Boilertalk/Web3.swift.git", from: "0.8.0")
+        .package(url: "https://github.com/web3swift-team/web3swift.git", from: "3.0.0"),
+        .package(url: "https://github.com/attaswift/BigInt.git", from: "5.3.0"),
+        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.7.0")
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "AtheneNFT",
             dependencies: [
-                .product(name: "Web3", package: "Web3.swift"),
-            ]),
+                .product(name: "web3swift", package: "web3swift"),
+                .product(name: "BigInt", package: "BigInt"),
+                .product(name: "CryptoSwift", package: "CryptoSwift")
+            ],
+            path: "Sources/AtheneNFT"),
         .testTarget(
             name: "AtheneNFTTests",
-            dependencies: ["AtheneNFT"]),
+            dependencies: ["AtheneNFT"])
     ]
 )

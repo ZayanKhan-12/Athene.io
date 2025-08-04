@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Athene.io}/AtheneNFT",
+            "name": "Debug AtheneNFT (AtheneNFT)",
+            "program": "${workspaceFolder:Athene.io}/AtheneNFT/.build/debug/AtheneNFT",
+            "preLaunchTask": "swift: Build Debug AtheneNFT (AtheneNFT)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:Athene.io}/AtheneNFT",
+            "name": "Release AtheneNFT (AtheneNFT)",
+            "program": "${workspaceFolder:Athene.io}/AtheneNFT/.build/release/AtheneNFT",
+            "preLaunchTask": "swift: Build Release AtheneNFT (AtheneNFT)"
+        }
+    ]
+}
