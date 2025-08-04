@@ -39,6 +39,22 @@ printSection("Building AtheneNFT Project")
 let currentDirectoryURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 print("📂 Current directory: \(currentDirectoryURL.path)")
 
+// First fix package paths
+printSection("Checking Package.swift configuration")
+let packageSwiftPath = currentDirectoryURL.appendingPathComponent("Package.swift").path
+let packageSwiftContent = try? String(contentsOfFile: packageSwiftPath, encoding: .utf8)
+
+if let content = packageSwiftContent {
+    if content.contains("path: \"Sources/AtheneNFT\"") {
+        print("\(YELLOW)Incorrect path detected in Package.swift. Fixing...\(RESET)")
+        let correctedContent = content.replacingOccurrences(of: "path: \"Sources/AtheneNFT\"", with: "path: \"AtheneNFT\"")
+        try? correctedContent.write(toFile: packageSwiftPath, atomically: true, encoding: .utf8)
+        print("\(GREEN)Package.swift path corrected.\(RESET)")
+    } else {
+        print("\(GREEN)Package.swift path configuration appears correct.\(RESET)")
+    }
+}
+
 // 1. Update Swift packages
 printSection("Resolving Dependencies")
 let resolveResult = shell("swift package resolve")

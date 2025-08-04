@@ -1,6 +1,9 @@
 import SwiftUI
 
-// Use a simpler approach - define the extension directly in this file
+// Import the shared models
+import Foundation
+
+// Extension for geometry scaling
 extension GeometryProxy {
     func scaled(_ value: CGFloat) -> CGFloat {
         return value * min(self.size.width / 390, 1.3)
@@ -8,7 +11,7 @@ extension GeometryProxy {
 }
 
 // Simple NFT model for the card view
-struct NFT {
+struct NFTDisplayCard: Identifiable {
     var id = UUID()
     var name = "Untitled NFT"
     var imageUrl = ""
@@ -17,7 +20,7 @@ struct NFT {
 }
 
 struct NFTCardView: View {
-    var nft: NFT? = nil
+    var nft: NFTDisplayCard? = nil
     
     var body: some View {
         GeometryReader { geometry in

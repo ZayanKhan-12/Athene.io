@@ -3,6 +3,41 @@ import Foundation
 import UIKit
 #endif
 
+// Errors for MetaMask operations
+enum MetaMaskError: Error {
+    case notConnected
+    case connectionFailed
+    case signFailed
+    case signCancelled
+    case signatureFailure
+    case invalidAddress
+    case invalidSignature
+    case networkError
+    case unexpectedError(String)
+    
+    var localizedDescription: String {
+        switch self {
+        case .notConnected:
+            return "Not connected to MetaMask. Please connect your wallet first."
+        case .connectionFailed:
+            return "Failed to connect to MetaMask."
+        case .signFailed, .signatureFailure:
+            return "Failed to sign message with MetaMask."
+        case .signCancelled:
+            return "Signature was cancelled by the user."
+        case .invalidAddress:
+            return "Invalid Ethereum address format."
+        case .invalidSignature:
+            return "The signature provided is invalid."
+        case .networkError:
+            return "Network error while communicating with Ethereum network."
+        case .unexpectedError(let message):
+            return "Unexpected error: \(message)"
+        }
+    }
+}
+
+@MainActor
 class MetaMaskService {
     static let shared = MetaMaskService()
     private let apiKey = "249221cc67f5466698376496f0f20b6b" // Web3Auth API Key
@@ -70,10 +105,17 @@ class MetaMaskService {
             
             // For demo/testing purposes on non-iOS platforms, we'll simulate a callback after a delay
             #if !os(iOS)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
-                let sampleAddress = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
-                self.currentAccount = sampleAddress
-                continuation.resume(returning: sampleAddress)
+            let sampleAddress = "0x742d35Cc6634C0532925a3b844Bc454e4438f44e"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                // For Swift 5, we'll work around the Sendable issues
+                // In a real app, you'd need to redesign the service to be properly Sendable-compliant
+                Task { @MainActor in 
+                    NotificationCenter.default.post(
+                        name: Notification.Name("MetaMaskConnected"),
+                        object: nil,
+                        userInfo: ["address": sampleAddress]
+                    )
+                }
             }
             #endif
         }
@@ -133,28 +175,5 @@ class MetaMaskService {
         // This would fetch the balance from the Ethereum node
         // For demo purposes, we'll return a mock balance
         return "1.2 ETH"
-    }
-}
-
-enum MetaMaskError: Error {
-    case notConnected
-    case signatureFailure
-    case invalidAddress
-    case connectionFailed
-    case networkError
-    
-    var localizedDescription: String {
-        switch self {
-        case .notConnected:
-            return "Not connected to MetaMask. Please connect your wallet first."
-        case .signatureFailure:
-            return "Failed to sign message with MetaMask."
-        case .invalidAddress:
-            return "Invalid Ethereum address format."
-        case .connectionFailed:
-            return "Failed to connect to MetaMask. Please try again."
-        case .networkError:
-            return "Network error occurred while connecting to Ethereum network."
-        }
     }
 }

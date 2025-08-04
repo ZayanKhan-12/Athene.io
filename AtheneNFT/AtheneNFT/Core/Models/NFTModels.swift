@@ -1,6 +1,11 @@
 import Foundation
+import SwiftUI
 
-struct NFT: Identifiable {
+// This file is deprecated - using the unified models in NFT.swift and User.swift
+// Keeping this file as a compatibility layer
+
+// Simple NFT struct for backward compatibility
+struct NFTSimple: Identifiable {
     let id: String
     let name: String
     let description: String
@@ -13,19 +18,5 @@ struct NFT: Identifiable {
     
     var priceString: String {
         return String(format: "%.2f ETH", price)
-    }
-}
-
-struct NFTUser: Identifiable {
-    let id: String
-    let walletAddress: String
-    let username: String?
-    let email: String?
-    
-    init(id: String = UUID().uuidString, walletAddress: String, username: String? = nil, email: String? = nil) {
-        self.id = id
-        self.walletAddress = walletAddress
-        self.username = username
-        self.email = email
     }
 }

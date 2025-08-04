@@ -1,6 +1,6 @@
 import SwiftUI
 
-// Use a simpler approach - define the extension directly in this file
+// Import the GeometryProxy extension
 extension GeometryProxy {
     func scaled(_ value: CGFloat) -> CGFloat {
         return value * min(self.size.width / 390, 1.3)

@@ -25,7 +25,7 @@ let package = Package(
                 .product(name: "BigInt", package: "BigInt"),
                 .product(name: "CryptoSwift", package: "CryptoSwift")
             ],
-            path: "Sources/AtheneNFT",
+            path: "AtheneNFT",
             resources: [
                 .process("Resources")
             ])
