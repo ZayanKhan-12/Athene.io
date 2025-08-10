@@ -4,7 +4,7 @@ SWIFT_VERSION = 5.0
 IPHONEOS_DEPLOYMENT_TARGET = 17.0
 
 // Environment key forwarded to Info.plist at runtime
-WEB3AUTH_API_KEY =
+WEB3AUTH_API_KEY = 249221cc67f5466698376496f0f20b6b
 
 // Set your Apple Developer Team ID here or in User-Defined settings
 DEVELOPMENT_TEAM = 

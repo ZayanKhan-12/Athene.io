@@ -42,7 +42,7 @@ class URLHandler {
             
             // Notify MetaMask service
             NotificationCenter.default.post(
-                name: Notification.Name("MetaMaskConnected"),
+                name: Foundation.Notification.Name("MetaMaskConnected"),
                 object: nil,
                 userInfo: ["address": address]
             )
@@ -58,7 +58,7 @@ class URLHandler {
             
             // Notify MetaMask service
             NotificationCenter.default.post(
-                name: Notification.Name("MetaMaskSignatureReceived"),
+                name: Foundation.Notification.Name("MetaMaskSignatureReceived"),
                 object: nil,
                 userInfo: ["signature": signature]
             )

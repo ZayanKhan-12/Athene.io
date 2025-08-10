@@ -7,7 +7,7 @@ struct NFT: Identifiable, Codable, Hashable {
     let description: String
     let imageURL: String
     let price: Double
-    var creator: User
+    var creator: AppUser
     let createdAt: Date
     let blockchain: BlockchainType
     let contract: String?
@@ -99,7 +99,7 @@ func generateSampleNFTItems(count: Int, startIndex: Int = 0) -> [NFTItem] {
     }
 }
 
-struct User: Identifiable, Codable, Hashable {
+struct AppUser: Identifiable, Codable, Hashable {
     let id: String
     let username: String
     let displayName: String
@@ -130,7 +130,7 @@ struct User: Identifiable, Codable, Hashable {
         hasher.combine(id)
     }
     
-    static func == (lhs: User, rhs: User) -> Bool {
+    static func == (lhs: AppUser, rhs: AppUser) -> Bool {
         lhs.id == rhs.id
     }
     

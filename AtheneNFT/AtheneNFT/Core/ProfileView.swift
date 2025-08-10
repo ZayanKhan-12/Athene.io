@@ -1,12 +1,5 @@
 import SwiftUI
 
-// We'll keep the extension here for now and consolidate later
-extension GeometryProxy {
-    func scaled(_ value: CGFloat) -> CGFloat {
-        return value * min(self.size.width / 390, 1.3)
-    }
-}
-
 struct ProfileView: View {
     // Use fixed values to ensure compilation
     private var username = "User123"

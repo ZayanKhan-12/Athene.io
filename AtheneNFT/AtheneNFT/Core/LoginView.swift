@@ -1,12 +1,5 @@
 import SwiftUI
 
-// Use a simpler approach - define the extension directly in this file
-extension GeometryProxy {
-    func scaled(_ value: CGFloat) -> CGFloat {
-        return value * min(self.size.width / 390, 1.3)
-    }
-}
-
 struct LoginView: View {
     @Binding var isLoggedIn: Bool
     @State private var isAuthenticating = false
@@ -59,6 +52,4 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView(isLoggedIn: .constant(false))
-}
+

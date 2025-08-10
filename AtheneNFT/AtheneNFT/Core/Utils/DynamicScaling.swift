@@ -1,24 +1,5 @@
 import SwiftUI
 
-// Create a unified extension for all dynamic scaling
-// This should be imported in all your view files
-public extension GeometryProxy {
-    /// Get a scaling factor for the device
-    var dynamicScale: CGFloat {
-        min(self.size.width / 390, 1.3)
-    }
-    
-    /// Scale a value based on the device width
-    func scaled(_ value: CGFloat) -> CGFloat {
-        value * dynamicScale
-    }
-    
-    /// Get a dynamically scaled font
-    func scaledFont(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        .system(size: scaled(size), weight: weight)
-    }
-}
-
 /// A unified scaling factor that can be used even without GeometryReader
 public struct DynamicScaling {
     /// Default scaling based on common device width

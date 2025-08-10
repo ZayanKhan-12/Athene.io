@@ -3,13 +3,6 @@ import SwiftUI
 // Import the shared models
 import Foundation
 
-// Extension for geometry scaling
-extension GeometryProxy {
-    func scaled(_ value: CGFloat) -> CGFloat {
-        return value * min(self.size.width / 390, 1.3)
-    }
-}
-
 // Simple NFT model for the card view
 struct NFTDisplayCard: Identifiable {
     var id = UUID()

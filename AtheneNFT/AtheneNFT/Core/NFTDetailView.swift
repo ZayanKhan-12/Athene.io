@@ -6,9 +6,8 @@ struct NFTDetailView: View {
     @StateObject private var social = SocialService.shared
     @State private var commentText: String = ""
     @State private var showShare = false
-    @State private var isConnectingWC = false
-    @State private var isListing = false
-    @State private var listingPrice: String = ""
+
+    private var socialKey: String { "nft:\(nft.id)" }
 
     var body: some View {
         GeometryReader { geometry in
@@ -35,19 +34,12 @@ struct NFTDetailView: View {
                     HStack(spacing: geometry.scaled(16)) {
                         Button(action: {
                             guard let userId = auth.currentUser?.id else { return }
-                            let key = "\(nft.contractAddress):\(nft.tokenId)"
-                            social.toggleLike(nftKey: key, userId: userId)
+                            social.toggleLike(nftKey: socialKey, userId: userId)
                         }) {
                             Label("Like", systemImage: "heart")
                         }
 
-                        if let url = nft.openseaURL {
-                            Link(destination: url) {
-                                Label("View on OpenSea", systemImage: "safari")
-                            }
-                            // Simple deeplink hints for buy/list by opening OpenSea asset page
-                            Link("Buy", destination: url)
-                            Button("List") { isListing = true }
+                        if let url = URL(string: nft.imageUrl) {
                             Button(action: { showShare = true }) {
                                 Label("Share", systemImage: "square.and.arrow.up")
                             }
@@ -57,35 +49,13 @@ struct NFTDetailView: View {
                         }
                     }
 
-                    // Listing sheet
-                    .sheet(isPresented: $isListing) {
-                        VStack(spacing: 16) {
-                            Text("List for Sale").font(.headline)
-                            TextField("Price (ETH)", text: $listingPrice)
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(.roundedBorder)
-                                .padding(.horizontal)
-                            Button(action: {
-                                Task {
-                                    await startListing()
-                                }
-                            }) {
-                                Text(isConnectingWC ? "Connecting…" : "Create Listing")
-                                    .padding()
-                            }
-                            Button("Cancel") { isListing = false }
-                        }
-                        .padding()
-                    }
-
                     Divider()
 
                     // Comments
                     Text("Comments")
                         .font(.system(size: geometry.scaled(20), weight: .semibold))
 
-                    let key = "\(nft.contractAddress):\(nft.tokenId)"
-                    ForEach(social.commentsByNFT[key] ?? []) { c in
+                    ForEach(social.commentsByNFT[socialKey] ?? []) { c in
                         VStack(alignment: .leading, spacing: geometry.scaled(4)) {
                             Text(c.text)
                             Text(c.timestamp, style: .relative)
@@ -100,7 +70,7 @@ struct NFTDetailView: View {
                             .textFieldStyle(.roundedBorder)
                         Button("Send") {
                             guard let userId = auth.currentUser?.id, !commentText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
-                            social.addComment(nftKey: key, userId: userId, text: commentText)
+                            social.addComment(nftKey: socialKey, userId: userId, text: commentText)
                             commentText = ""
                         }
                     }
@@ -112,46 +82,8 @@ struct NFTDetailView: View {
     }
 }
 
-extension NFTDetailView {
-    private func startListing() async {
-        guard !listingPrice.trimmingCharacters(in: .whitespaces).isEmpty else { return }
-        isConnectingWC = true
-        defer { isConnectingWC = false }
-        do {
-            let (maker, _) = try await WalletConnectService.shared.connect()
-            let create = ListingBackendClient.CreateBody(
-              chain: nft.chain.rawValue,
-              contract: nft.contractAddress,
-              tokenId: nft.tokenId,
-              price: listingPrice,
-              maker: maker
-            )
-            let resp = try await ListingBackendClient.create(create)
-            // Ask user to sign typed data via WC (placeholder or guarded implementation)
-            let typed = resp.typedData.mapValues { any -> Any in
-              switch any {
-                case .string(let s): return s
-                case .number(let d): return d
-                case .bool(let b): return b
-                case .array(let a): return a.map { $0 }
-                case .object(let o): return o.mapValues { $0 }
-                case .null: return NSNull()
-              }
-            }
-            let signature = try await WalletConnectService.shared.signTypedData(address: maker, typedData: typed)
-            let submit = ListingBackendClient.SubmitBody(requestId: resp.requestId, signature: signature)
-            _ = try await ListingBackendClient.submit(submit)
-            isListing = false
-        } catch {
-            // Present a simple alert via print for now
-            print("Listing failed: \(error.localizedDescription)")
-        }
-    }
-}
-
 #Preview {
-    NFTDetailView(nft: NFTDisplayCard(name: "Sample", imageUrl: "", priceString: "—", likes: 0, contractAddress: "0x", tokenId: "1", chain: .ethereum))
+    NFTDetailView(nft: NFTDisplayCard(name: "Sample", imageUrl: "", priceString: "—", likes: 0))
         .environmentObject(AuthenticationManager.shared)
 }
-
 

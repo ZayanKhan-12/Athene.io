@@ -8,7 +8,7 @@ struct OpenSeaAPI {
         var comp = URLComponents(url: base.appendingPathComponent(path), resolvingAgainstBaseURL: false)!
         if !query.isEmpty { comp.queryItems = query }
         var req = URLRequest(url: comp.url!)
-        req.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        req.setValue("4ec329fc4a3141d7bb2c6a1e1875b7ef", forHTTPHeaderField: "x-api-key")
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         return req
     }

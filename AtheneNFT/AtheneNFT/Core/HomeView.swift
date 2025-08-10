@@ -1,12 +1,5 @@
 import SwiftUI
 
-// Import the GeometryProxy extension
-extension GeometryProxy {
-    func scaled(_ value: CGFloat) -> CGFloat {
-        return value * min(self.size.width / 390, 1.3)
-    }
-}
-
 @available(iOS 14.0, macOS 11.0, *)
 struct HomeView: View {
     var body: some View {

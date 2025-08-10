@@ -51,7 +51,7 @@ class MetaMaskService {
     private init() {
         // Register for MetaMask connection notifications
         NotificationCenter.default.addObserver(
-            forName: Notification.Name("MetaMaskConnected"),
+            forName: Foundation.Notification.Name("MetaMaskConnected"),
             object: nil,
             queue: .main
         ) { [weak self] notification in
@@ -68,7 +68,7 @@ class MetaMaskService {
         
         // Register for MetaMask signature notifications
         NotificationCenter.default.addObserver(
-            forName: Notification.Name("MetaMaskSignatureReceived"),
+            forName: Foundation.Notification.Name("MetaMaskSignatureReceived"),
             object: nil,
             queue: .main
         ) { [weak self] notification in
@@ -111,7 +111,7 @@ class MetaMaskService {
                 // In a real app, you'd need to redesign the service to be properly Sendable-compliant
                 Task { @MainActor in 
                     NotificationCenter.default.post(
-                        name: Notification.Name("MetaMaskConnected"),
+                        name: Foundation.Notification.Name("MetaMaskConnected"),
                         object: nil,
                         userInfo: ["address": sampleAddress]
                     )
