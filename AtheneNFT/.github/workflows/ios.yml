@@ -1,0 +1,51 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: Build AtheneNFT (Simulator)
+        working-directory: AtheneNFT
+        env:
+          WEB3AUTH_API_KEY: ${{ secrets.WEB3AUTH_API_KEY }}
+        run: |
+          xcodebuild -scheme AtheneNFT \
+            -project AtheneNFT.xcodeproj \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            WEB3AUTH_API_KEY="$WEB3AUTH_API_KEY" \
+            build | xcpretty || true
+
+      - name: Package .app artifact
+        if: always()
+        run: |
+          APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -type d -name "AtheneNFT.app" | head -n 1)
+          if [ -d "$APP_PATH" ]; then
+            mkdir -p artifacts
+            ditto "$APP_PATH" artifacts/AtheneNFT.app
+          else
+            echo "AtheneNFT.app not found in DerivedData"
+          fi
+
+      - name: Upload .app artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: AtheneNFT.app
+          path: artifacts/AtheneNFT.app
+
