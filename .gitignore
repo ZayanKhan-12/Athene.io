@@ -1,0 +1,3 @@
+# Ignore local SPM build cache
+AtheneNFT/.build/
+
