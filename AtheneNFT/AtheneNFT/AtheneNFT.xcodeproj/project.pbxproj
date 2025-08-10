@@ -31,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD1234567890ABCD00000043 /* AtheneNFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtheneNFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1234567890ABCD00000002 /* AtheneNFTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtheneNFTApp.swift; sourceTree = "<group>"; };
 		AD1234567890ABCD00000004 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD1234567890ABCD00000006 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		AD1234567890ABCD00000038 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		AD1234567890ABCD00000040 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
 		AD1234567890ABCD00000042 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		AD1234567890ABCD00000043 /* AtheneNFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtheneNFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1234567890ABCD00000044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,14 +75,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		AD1234567890ABCD00000048 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AD1234567890ABCD00000043 /* AtheneNFT.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AD1234567890ABCD00000047 /* AtheneNFT */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +87,12 @@
 			path = AtheneNFT;
 			sourceTree = "<group>";
 		};
-		AD1234567890ABCD00000050 /* Preview Content */ = {
+		AD1234567890ABCD00000048 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD1234567890ABCD00000006 /* Preview Assets.xcassets */,
+				AD1234567890ABCD00000043 /* AtheneNFT.app */,
 			);
-			path = "Preview Content";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AD1234567890ABCD00000049 /* Core */ = {
@@ -118,6 +110,14 @@
 				AD1234567890ABCD00000052 /* Services */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AD1234567890ABCD00000050 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD1234567890ABCD00000006 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		AD1234567890ABCD00000051 /* Models */ = {
@@ -367,11 +367,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AtheneNFT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AtheneNFT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Athene;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,11 +398,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AtheneNFT/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AtheneNFT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Athene;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -423,20 +425,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AD1234567890ABCD00000058 /* Build configuration list for PBXProject "AtheneNFT" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD1234567890ABCD00000059 /* Debug */,
-				AD1234567890ABCD00000060 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AD1234567890ABCD00000054 /* Build configuration list for PBXNativeTarget "AtheneNFT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD1234567890ABCD00000061 /* Debug */,
 				AD1234567890ABCD00000062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD1234567890ABCD00000058 /* Build configuration list for PBXProject "AtheneNFT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD1234567890ABCD00000059 /* Debug */,
+				AD1234567890ABCD00000060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
