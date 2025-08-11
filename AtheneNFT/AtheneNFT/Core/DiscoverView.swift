@@ -291,6 +291,7 @@ final class DiscoverViewModel: ObservableObject {
 
 struct DiscoverView: View {
     @StateObject private var vm: DiscoverViewModel
+    @StateObject private var stream = OpenSeaStreamService.shared
 
     init(service: DiscoverService? = nil) {
         // Swap the service here: APIBasedDiscoverService or MockDiscoverService
@@ -309,9 +310,13 @@ struct DiscoverView: View {
             .navigationTitle("Discover")
             .searchable(text: $vm.searchText, placement: .navigationBarDrawer(displayMode: .automatic))
             .onSubmit(of: .search) { Task { await vm.refresh() } }
-            .task { await vm.refresh() }
-            .onChange(of: vm.category, initial: false) { _, _ in
+            .task {
+                await vm.refresh()
+                if vm.category == .art { stream.connect() }
+            }
+            .onChange(of: vm.category, initial: false) { _, newCat in
                 Task { await vm.refresh() }
+                if newCat == .art { stream.connect() } else { stream.disconnect() }
             }
         }
     }
@@ -320,8 +325,8 @@ struct DiscoverView: View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 164), spacing: 14)], spacing: 14) {
                 if vm.category == .art {
-                    ForEach(vm.liveArtItems, id: \.id) { nft in
-                        StreamNFTCard(nft: nft)
+                    ForEach(stream.events, id: \.id) { e in
+                        StreamEventCard(item: e)
                     }
                 } else {
                     ForEach(vm.gridItems, id: \.id) { item in
@@ -340,7 +345,7 @@ struct DiscoverView: View {
         }
         .refreshable { await vm.refresh() }
         .overlay(alignment: .center) {
-            if vm.category == .art && vm.liveArtItems.isEmpty {
+            if vm.category == .art && stream.events.isEmpty {
                 VStack(spacing: 10) {
                     Image(systemName: "sparkles.rectangle.stack").font(.system(size: 36))
                     Text("Fetching art…")
@@ -541,5 +546,41 @@ struct CollectionDetailView: View {
 struct Discover_Previews: PreviewProvider {
     static var previews: some View {
         DiscoverView(service: MockDiscoverService())
+    }
+}
+
+struct StreamEventCard: View {
+    let item: OpenSeaStreamService.StreamEventItem
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ZStack {
+                Rectangle().fill(Color.gray.opacity(0.06)).aspectRatio(1, contentMode: .fit)
+                if let urlStr = item.imageURL, let url = URL(string: urlStr) {
+                    AsyncImage(url: url) { img in
+                        img.resizable().scaledToFill()
+                    } placeholder: { ProgressView() }
+                } else {
+                    Image(systemName: "photo").foregroundStyle(.secondary)
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+
+            Text(item.title)
+                .font(.headline)
+                .lineLimit(1)
+
+            Text(item.subtitle)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+
+            if let url = item.assetURL {
+                Link("View on OpenSea", destination: url)
+                    .font(.caption)
+            }
+        }
+        .padding(10)
+        .background(RoundedRectangle(cornerRadius: 16).fill(Color(.secondarySystemBackground)))
     }
 }

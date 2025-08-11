@@ -1,14 +1,41 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    @StateObject private var stream = OpenSeaStreamService.shared
+
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0..<10) { _ in
-                    NotificationRow()
+            List(stream.events) { e in
+                HStack(spacing: 12) {
+                    if let urlStr = e.imageURL, let url = URL(string: urlStr) {
+                        AsyncImage(url: url) { img in
+                            img.resizable().scaledToFill()
+                        } placeholder: { Color.gray.opacity(0.2) }
+                        .frame(width: 44, height: 44)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(e.title).font(.headline).lineLimit(1)
+                        Text(e.subtitle).font(.subheadline).foregroundColor(.secondary).lineLimit(1)
+                    }
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    if let url = e.assetURL {
+                        #if os(iOS)
+                        UIApplication.shared.open(url)
+                        #endif
+                    }
                 }
             }
-            .navigationTitle("Notifications")
+            .navigationTitle("Live Stream")
+        }
+        .task {
+            stream.connect() // or: stream.connect(collectionSlug: "doodles-official")
+        }
+        .onDisappear {
+            stream.disconnect()
         }
     }
 }

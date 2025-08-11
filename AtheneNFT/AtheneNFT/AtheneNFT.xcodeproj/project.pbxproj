@@ -31,6 +31,17 @@
         AD1234567890ABCD00000064 /* ScalingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000065 /* ScalingExtensions.swift */; };
         AD1234567890ABCD00000067 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000066 /* ShareSheet.swift */; };
         AD1234567890ABCD00000068 /* OpenSeaArtStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000069 /* OpenSeaArtStreamService.swift */; };
+        AD1234567890ABCD00000072 /* OpenSeaStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000071 /* OpenSeaStreamService.swift */; };
+        AD1234567890ABCD00000073 /* FeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000083 /* FeedModels.swift */; };
+        AD1234567890ABCD00000074 /* FeedScorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000084 /* FeedScorer.swift */; };
+        AD1234567890ABCD00000075 /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000085 /* FeedService.swift */; };
+        AD1234567890ABCD00000076 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000086 /* FeedStore.swift */; };
+        AD1234567890ABCD00000077 /* OpenSeaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000087 /* OpenSeaAPI.swift */; };
+        AD1234567890ABCD00000078 /* OSCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000088 /* OSCollection.swift */; };
+        AD1234567890ABCD00000079 /* OSEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000089 /* OSEvents.swift */; };
+        AD1234567890ABCD00000080 /* OSListings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000090 /* OSListings.swift */; };
+        AD1234567890ABCD00000081 /* OSOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000091 /* OSOffers.swift */; };
+        AD1234567890ABCD00000082 /* FollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1234567890ABCD00000092 /* FollowService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +69,17 @@
         AD1234567890ABCD00000065 /* ScalingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils/ScalingExtensions.swift; sourceTree = "<group>"; };
         AD1234567890ABCD00000066 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils/ShareSheet.swift; sourceTree = "<group>"; };
         AD1234567890ABCD00000069 /* OpenSeaArtStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/OpenSeaArtStreamService.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000071 /* OpenSeaStreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSeaStreamService.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000083 /* FeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed/FeedModels.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000084 /* FeedScorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed/FeedScorer.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000085 /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed/FeedService.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000086 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed/FeedStore.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000087 /* OpenSeaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/OpenSeaAPI.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000088 /* OSCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/Models/OpenSea/OSCollection.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000089 /* OSEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/Models/OpenSea/OSEvents.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000090 /* OSListings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/Models/OpenSea/OSListings.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000091 /* OSOffers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking/Models/OpenSea/OSOffers.swift; sourceTree = "<group>"; };
+        AD1234567890ABCD00000092 /* FollowService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowService.swift; sourceTree = "<group>"; };
 		AD1234567890ABCD00000043 /* AtheneNFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtheneNFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD1234567890ABCD00000044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,12 +131,21 @@
 				AD1234567890ABCD00000012 /* HomeView.swift */,
 				AD1234567890ABCD00000014 /* DiscoverView.swift */,
                 AD1234567890ABCD00000069 /* OpenSeaArtStreamService.swift */,
+                AD1234567890ABCD00000087 /* OpenSeaAPI.swift */,
+                AD1234567890ABCD00000088 /* OSCollection.swift */,
+                AD1234567890ABCD00000089 /* OSEvents.swift */,
+                AD1234567890ABCD00000090 /* OSListings.swift */,
+                AD1234567890ABCD00000091 /* OSOffers.swift */,
 				AD1234567890ABCD00000016 /* NotificationsView.swift */,
 				AD1234567890ABCD00000018 /* ProfileView.swift */,
 				AD1234567890ABCD00000020 /* NFTCardView.swift */,
 				AD1234567890ABCD00000022 /* LoginView.swift */,
                 AD1234567890ABCD00000065 /* ScalingExtensions.swift */,
                 AD1234567890ABCD00000066 /* ShareSheet.swift */,
+                AD1234567890ABCD00000083 /* FeedModels.swift */,
+                AD1234567890ABCD00000084 /* FeedScorer.swift */,
+                AD1234567890ABCD00000085 /* FeedService.swift */,
+                AD1234567890ABCD00000086 /* FeedStore.swift */,
 				AD1234567890ABCD00000051 /* Models */,
 				AD1234567890ABCD00000052 /* Services */,
 			);
@@ -149,6 +180,8 @@
 				AD1234567890ABCD00000038 /* UserService.swift */,
 				AD1234567890ABCD00000040 /* URLHandler.swift */,
 				AD1234567890ABCD00000042 /* FontManager.swift */,
+                AD1234567890ABCD00000071 /* OpenSeaStreamService.swift */,
+                AD1234567890ABCD00000092 /* FollowService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -241,12 +274,23 @@
 				AD1234567890ABCD00000031 /* AuthenticationManager.swift in Sources */,
 				AD1234567890ABCD00000033 /* MetaMaskService.swift in Sources */,
 				AD1234567890ABCD00000035 /* NFTService.swift in Sources */,
+                AD1234567890ABCD00000082 /* FollowService.swift in Sources */,
 				AD1234567890ABCD00000037 /* UserService.swift in Sources */,
 				AD1234567890ABCD00000039 /* URLHandler.swift in Sources */,
 				AD1234567890ABCD00000041 /* FontManager.swift in Sources */,
                 AD1234567890ABCD00000064 /* ScalingExtensions.swift in Sources */,
                 AD1234567890ABCD00000067 /* ShareSheet.swift in Sources */,
                 AD1234567890ABCD00000068 /* OpenSeaArtStreamService.swift in Sources */,
+                AD1234567890ABCD00000072 /* OpenSeaStreamService.swift in Sources */,
+                AD1234567890ABCD00000077 /* OpenSeaAPI.swift in Sources */,
+                AD1234567890ABCD00000078 /* OSCollection.swift in Sources */,
+                AD1234567890ABCD00000079 /* OSEvents.swift in Sources */,
+                AD1234567890ABCD00000080 /* OSListings.swift in Sources */,
+                AD1234567890ABCD00000081 /* OSOffers.swift in Sources */,
+                AD1234567890ABCD00000073 /* FeedModels.swift in Sources */,
+                AD1234567890ABCD00000074 /* FeedScorer.swift in Sources */,
+                AD1234567890ABCD00000076 /* FeedStore.swift in Sources */,
+                AD1234567890ABCD00000075 /* FeedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@ final class OpenSeaStreamService: ObservableObject {
         return URLSession(configuration: config)
     }()
 
-    private let streamURL = URL(string: "wss://stream.openseabeta.com/socket")!
+    private let streamURL = URL(string: ProcessInfo.processInfo.environment["OPENSEA_STREAM_URL"] ?? "wss://stream.opensea.io/socket")!
     private var apiKey: String {
         ProcessInfo.processInfo.environment["OPENSEA_API_KEY"] as String?
         ?? (Bundle.main.object(forInfoDictionaryKey: "OPENSEA_API_KEY") as? String)

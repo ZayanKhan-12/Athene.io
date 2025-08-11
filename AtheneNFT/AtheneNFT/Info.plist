@@ -16,5 +16,7 @@
     <string>AppIcon</string>
     <key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
     <string>AccentColor</string>
+    <key>OPENSEA_API_KEY</key>
+    <string>4ec329fc4a3141d7bb2c6a1e1875b7ef</string>
 </dict>
 </plist>
